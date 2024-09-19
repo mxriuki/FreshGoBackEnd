@@ -1,11 +1,20 @@
 from fastapi import FastAPI, HTTPException  # type: ignore
 from pydantic import BaseModel  # type: ignore
+from fastapi.middleware.cors import CORSMiddleware 
 from typing import List, Optional
 from uuid import UUID, uuid4
 import uvicorn  # type: ignore
 import requests  # type: ignore
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"], 
+    allow_headers=["*"],  
+)
 
 # Recipe model
 class Recipe(BaseModel):
