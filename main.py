@@ -1,9 +1,9 @@
-from fastapi import FastAPI, HTTPException # type: ignore
-from pydantic import BaseModel # type: ignore
+from fastapi import FastAPI, HTTPException  # type: ignore
+from pydantic import BaseModel  # type: ignore
 from typing import List, Optional
 from uuid import UUID, uuid4
-import uvicorn # type: ignore
-import requests # type: ignore
+import uvicorn  # type: ignore
+import requests  # type: ignore
 
 app = FastAPI()
 
@@ -18,6 +18,91 @@ class Recipe(BaseModel):
 
 # In-memory "database"
 recipes_db: List[Recipe] = []
+
+# Adding initial recipes to the in-memory database
+initial_recipes = [
+    {
+        "title": "Spaghetti Carbonara",
+        "ingredients": [
+            "200g spaghetti",
+            "100g pancetta",
+            "2 large eggs",
+            "50g grated Pecorino cheese",
+            "50g grated Parmesan cheese",
+            "Black pepper",
+            "Salt"
+        ],
+        "instructions": "Cook the spaghetti in salted boiling water until al dente. In a separate pan, cook the pancetta until crispy. Beat the eggs and mix with the cheeses. Drain the spaghetti and mix everything together quickly while the pasta is still hot. Serve immediately with extra cheese and black pepper.",
+        "tags": ["Italian", "Pasta", "Main Course"],
+        "image_url": "https://example.com/spaghetti_carbonara.jpg"
+    },
+    {
+        "title": "Chicken Tikka Masala",
+        "ingredients": [
+            "500g chicken breast, diced",
+            "200g yogurt",
+            "2 tbsp tikka masala paste",
+            "1 onion, chopped",
+            "400g canned tomatoes",
+            "100ml cream",
+            "Fresh coriander",
+            "Salt"
+        ],
+        "instructions": "Marinate chicken in yogurt and tikka paste for at least an hour. Cook onion until soft, then add marinated chicken. Cook until chicken is browned, add tomatoes and simmer. Stir in cream and garnish with coriander.",
+        "tags": ["Indian", "Curry", "Main Course"],
+        "image_url": "https://example.com/chicken_tikka_masala.jpg"
+    },
+    {
+        "title": "Beef Tacos",
+        "ingredients": [
+            "400g minced beef",
+            "1 onion, diced",
+            "2 cloves garlic, minced",
+            "1 tsp chili powder",
+            "1 tsp cumin",
+            "Taco shells",
+            "Lettuce, tomato, cheese, sour cream"
+        ],
+        "instructions": "Brown the minced beef with onion and garlic. Add spices and cook for a few minutes. Serve in taco shells with your choice of toppings.",
+        "tags": ["Mexican", "Fast Food", "Main Course"],
+        "image_url": "https://example.com/beef_tacos.jpg"
+    },
+    {
+        "title": "Vegetable Stir Fry",
+        "ingredients": [
+            "1 cup broccoli florets",
+            "1 bell pepper, sliced",
+            "1 carrot, julienned",
+            "2 cloves garlic, minced",
+            "2 tbsp soy sauce",
+            "1 tbsp sesame oil",
+            "Cooked rice"
+        ],
+        "instructions": "Heat sesame oil in a pan, add garlic and vegetables. Stir-fry until tender. Add soy sauce and serve over cooked rice.",
+        "tags": ["Vegetarian", "Quick Meal", "Main Course"],
+        "image_url": "https://example.com/vegetable_stir_fry.jpg"
+    },
+    {
+        "title": "Chocolate Chip Cookies",
+        "ingredients": [
+            "125g butter",
+            "100g brown sugar",
+            "1 egg",
+            "200g flour",
+            "1 tsp baking soda",
+            "100g chocolate chips"
+        ],
+        "instructions": "Cream butter and sugar, add egg. Mix flour and baking soda, then combine with wet ingredients. Fold in chocolate chips. Bake at 180°C for 10-12 minutes.",
+        "tags": ["Dessert", "Baking", "Snack"],
+        "image_url": "https://example.com/chocolate_chip_cookies.jpg"
+    }
+]
+
+# Populate the in-memory database with initial recipes
+for recipe_data in initial_recipes:
+    recipe = Recipe(**recipe_data)
+    recipe.id = uuid4()  # Assign a new UUID to each recipe
+    recipes_db.append(recipe)
 
 # Create a new recipe
 @app.post("/recipes/", response_model=Recipe)
@@ -61,43 +146,3 @@ def delete_recipe(recipe_id: UUID):
 # Run the FastAPI application
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
-
-
-    new_recipe = {
-        "title": "Spaghetti Carbonara",
-        "ingredients": ["200g spaghetti", "100g pancetta", "2 large eggs", "50g grated Pecorino cheese", "50g grated Parmesan cheese", "Black pepper", "Salt"],
-        "instructions": "Cook the spaghetti in salted boiling water until al dente. In a separate pan, cook the pancetta until crispy. Beat the eggs and mix with the cheeses. Drain the spaghetti and mix everything together quickly while the pasta is still hot. Serve immediately with extra cheese and black pepper.",
-        "tags": ["Italian", "Pasta", "Main Course"],
-        "image_url": "https://example.com/spaghetti_carbonara.jpg"
-    }
-
-    response = requests.post("http://127.0.0.1:8000/recipes/", json=new_recipe)
-    print("Created Recipe:", response.json())
-
-    # 2. Read All Recipes
-    response = requests.get("http://127.0.0.1:8000/recipes/")
-    print("All Recipes:", response.json())
-
-    # 3. Read a Recipe by ID (use an actual UUID from created recipes)
-    recipe_id = "valid-uuid-here"  # Replace with a valid UUID
-    response = requests.get(f"http://127.0.0.1:8000/recipes/{recipe_id}")
-    print("Recipe:", response.json())
-
-    # 4. Update a Recipe
-    updated_recipe = {
-        "title": "Updated Recipe Title",
-        "ingredients": ["Updated Ingredient 1", "Updated Ingredient 2"],
-        "instructions": "Updated instructions.",
-        "tags": ["Updated Tag"],
-        "image_url": "https://example.com/new_image.jpg"
-    }
-
-    recipe_id = "valid-uuid-here"  # Replace with a valid UUID
-    response = requests.put(f"http://127.0.0.1:8000/recipes/{recipe_id}", json=updated_recipe)
-    print("Updated Recipe:", response.json())
-
-    # 5. Delete a Recipe
-    recipe_id = "valid-uuid-here"  # Replace with a valid UUID
-    response = requests.delete(f"http://127.0.0.1:8000/recipes/{recipe_id}")
-    print("Delete Response:", response.json())
-
