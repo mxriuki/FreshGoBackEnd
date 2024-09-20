@@ -43,7 +43,7 @@ initial_recipes = [
         ],
         "instructions": "Cook the spaghetti in salted boiling water until al dente. In a separate pan, cook the pancetta until crispy. Beat the eggs and mix with the cheeses. Drain the spaghetti and mix everything together quickly while the pasta is still hot. Serve immediately with extra cheese and black pepper.",
         "tags": ["Italian", "Pasta", "Main Course"],
-        "image_url": "https://i.pinimg.com/564x/37/98/2a/37982ab7e39b965ddad554764f68531e.jpg"
+        "image_url": "https://www.thespruceeats.com/thmb/ovIQQQxQajADuIE2lqhgqq7ppyE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pasta-carbonara-recipe-5210168-hero-01-80090e56abc04ca19d88ebf7fad1d157.jpg"
     },
     {
         "title": "Chicken Tikka Masala",
@@ -59,7 +59,7 @@ initial_recipes = [
         ],
         "instructions": "Marinate chicken in yogurt and tikka paste for at least an hour. Cook onion until soft, then add marinated chicken. Cook until chicken is browned, add tomatoes and simmer. Stir in cream and garnish with coriander.",
         "tags": ["Indian", "Curry", "Main Course"],
-        "image_url": "https://i.pinimg.com/564x/c6/65/c7/c665c758a0b5d5a6a93db951d11124d1.jpg"
+        "image_url": "https://www.allrecipes.com/thmb/1ul-jdOz8H4b6BDrRcYOuNmJgt4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/239867chef-johns-chicken-tikka-masala-ddmfs-3X4-0572-e02a25f8c7b745459a9106e9eb13de10.jpg"
     },
     {
         "title": "Beef Tacos",
@@ -74,7 +74,7 @@ initial_recipes = [
         ],
         "instructions": "Brown the minced beef with onion and garlic. Add spices and cook for a few minutes. Serve in taco shells with your choice of toppings.",
         "tags": ["Mexican", "Fast Food", "Main Course"],
-        "image_url": "https://i.pinimg.com/564x/78/0d/1d/780d1d277113b6fc7db6ff6b0c99b402.jpg"
+        "image_url": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg"
     },
     {
         "title": "Vegetable Stir Fry",
@@ -89,7 +89,7 @@ initial_recipes = [
         ],
         "instructions": "Heat sesame oil in a pan, add garlic and vegetables. Stir-fry until tender. Add soy sauce and serve over cooked rice.",
         "tags": ["Vegetarian", "Quick Meal", "Main Course"],
-        "image_url": "https://i.pinimg.com/564x/9a/f6/50/9af650df61443471f0170cc7a15e81af.jpg"
+        "image_url": "https://therecipecritic.com/wp-content/uploads/2019/09/Vegetable-Stir-Fry-Facebook-SEO-800-x-534.png"
     },
     {
         "title": "Chocolate Chip Cookies",
@@ -103,7 +103,7 @@ initial_recipes = [
         ],
         "instructions": "Cream butter and sugar, add egg. Mix flour and baking soda, then combine with wet ingredients. Fold in chocolate chips. Bake at 180°C for 10-12 minutes.",
         "tags": ["Dessert", "Baking", "Snack"],
-        "image_url": "https://i.pinimg.com/564x/79/38/7b/79387b805465a32632ec124beee05e8e.jpg"
+        "image_url": "https://assets.bonappetit.com/photos/5ca53449cab3b6de9ee488f4/16:9/w_2560%2Cc_limit/chocolate-chip-cookie-1.jpg"
     }
 ]
 
