@@ -43,7 +43,7 @@ initial_recipes = [
         ],
         "instructions": "Cook the spaghetti in salted boiling water until al dente. In a separate pan, cook the pancetta until crispy. Beat the eggs and mix with the cheeses. Drain the spaghetti and mix everything together quickly while the pasta is still hot. Serve immediately with extra cheese and black pepper.",
         "tags": ["Italian", "Pasta", "Main Course"],
-        "image_url": "https://example.com/spaghetti_carbonara.jpg"
+        "image_url": "https://i.pinimg.com/564x/37/98/2a/37982ab7e39b965ddad554764f68531e.jpg"
     },
     {
         "title": "Chicken Tikka Masala",
@@ -59,7 +59,7 @@ initial_recipes = [
         ],
         "instructions": "Marinate chicken in yogurt and tikka paste for at least an hour. Cook onion until soft, then add marinated chicken. Cook until chicken is browned, add tomatoes and simmer. Stir in cream and garnish with coriander.",
         "tags": ["Indian", "Curry", "Main Course"],
-        "image_url": "https://example.com/chicken_tikka_masala.jpg"
+        "image_url": "https://i.pinimg.com/564x/c6/65/c7/c665c758a0b5d5a6a93db951d11124d1.jpg"
     },
     {
         "title": "Beef Tacos",
@@ -74,7 +74,7 @@ initial_recipes = [
         ],
         "instructions": "Brown the minced beef with onion and garlic. Add spices and cook for a few minutes. Serve in taco shells with your choice of toppings.",
         "tags": ["Mexican", "Fast Food", "Main Course"],
-        "image_url": "https://example.com/beef_tacos.jpg"
+        "image_url": "https://i.pinimg.com/564x/78/0d/1d/780d1d277113b6fc7db6ff6b0c99b402.jpg"
     },
     {
         "title": "Vegetable Stir Fry",
@@ -89,7 +89,7 @@ initial_recipes = [
         ],
         "instructions": "Heat sesame oil in a pan, add garlic and vegetables. Stir-fry until tender. Add soy sauce and serve over cooked rice.",
         "tags": ["Vegetarian", "Quick Meal", "Main Course"],
-        "image_url": "https://example.com/vegetable_stir_fry.jpg"
+        "image_url": "https://i.pinimg.com/564x/9a/f6/50/9af650df61443471f0170cc7a15e81af.jpg"
     },
     {
         "title": "Chocolate Chip Cookies",
@@ -103,7 +103,7 @@ initial_recipes = [
         ],
         "instructions": "Cream butter and sugar, add egg. Mix flour and baking soda, then combine with wet ingredients. Fold in chocolate chips. Bake at 180°C for 10-12 minutes.",
         "tags": ["Dessert", "Baking", "Snack"],
-        "image_url": "https://example.com/chocolate_chip_cookies.jpg"
+        "image_url": "https://i.pinimg.com/564x/79/38/7b/79387b805465a32632ec124beee05e8e.jpg"
     }
 ]
 
